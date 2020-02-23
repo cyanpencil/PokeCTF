@@ -1,7 +1,7 @@
 # PokeCTF
 A quick-and-easy CTF framework for people who love ASCII and minimalism.
 
-![https://www.github.com/cyanpencil/PokeCTF/master/screen.png]
+![cool ascii](https://www.github.com/cyanpencil/PokeCTF/raw/master/screen.png)
 
 You can try a live version [here](http://www.cyanpencil.xyz:5000)
 
@@ -24,8 +24,8 @@ You can generate your own images by placing them in `pokectf/pokemon_sprites/pok
 # Credits
 This project was heavily inspired from @andreafioraldi's [ascii-ctf](https://github.com/andreafioraldi/ascii-ctf). 
 
-Pokemon sprites from: [https://www.kaggle.com/kvpratama/pokemon-images-dataset]
+Pokemon sprites from: https://www.kaggle.com/kvpratama/pokemon-images-dataset
 
-Blurry text hack from: [http://www.briankhuu.com/blog/self/2015/01/14/css-style-for-ascii-art.html]
+Blurry text hack from: http://www.briankhuu.com/blog/self/2015/01/14/css-style-for-ascii-art.html
 
-ASCII banner generator: [http://www.network-science.de/ascii/]
+ASCII banner generator: http://www.network-science.de/ascii/
