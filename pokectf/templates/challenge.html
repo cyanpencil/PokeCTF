@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+{{challenge.name}} ({{challenge.score}} points)
+{{challenge.info | safe }}
+{% if current_user.is_authenticated %}
+<form method="POST">{{ form.csrf_token }}
+Flag: {{ form.flag }}
+
+{{ form.submit }}
+</form>
+{% if form.errors %}{% for e in form.errors %}{% for m in form.errors[e] %}
+ >> {{ m }}
+{% endfor %}{% endfor %}{% endif %}
+{% else %}Please log in to submit flags.{% endif %}
+{% endblock %}

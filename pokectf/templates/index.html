@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+WELCOME
+--------------
+
+A tiny and minimal web platform for jeopardy ctf hacked around during the weekend,
+
+developed for internal use at team <a href="https://ctftime.org/team/34878">flagbot</a>
+
+Flag format is "poke{...}". Happy hacking!
+
+RULES
+--------
+
+For now I'm hosting this at my own server, where I have a lot of other stuff so pls do not break it.
+
+Playing together is <i>encouraged</i>, the main scope of this ctf is to explore the various categories.
+
+
+<form method="post" action="/"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}" /></form>
+{% endblock %}

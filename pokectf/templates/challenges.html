@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+Available challenges:
+
+<table>
+	<tr>
+		<td>+</td>
+		<td>-------------------------</td>
+		<td>+</td>
+		<td>--------------------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+	</tr><tr>
+		<td>|</td>
+		<td>Name</td>
+		<td>|</td>
+		<td>Category</td>
+		<td>|</td>
+		<td>Score</td>
+		<td>|</td>
+		<td>Solves</td>
+		<td>|</td>
+	</tr><tr>
+		<td>+</td>
+		<td>-------------------------</td>
+		<td>+</td>
+		<td>--------------------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+	</tr>
+	{% for challenge in challenges %} 
+	{% set chall_id = challenge.id|string %}
+	<tr {% if current_user.is_authenticated %} {{ "class=solved" if chall_id in current_user.solved.split(',') else '' }} {% endif %} >
+		<td>|</td>
+		<td>
+			<a href="/challenge/{{challenge.name}}">{{challenge.name}}</a> 		</td>
+		<td>|</td>
+		<td>{{ challenge.category }}</td>
+		<td>|</td>
+		<td>{{ challenge.score }}</td>
+		<td>|</td>
+		<td>{{ challenge.solves }}</td>
+		<td>|</td>
+	</tr>
+	<tr>
+		<td>+</td>
+		<td>-------------------------</td>
+		<td>+</td>
+		<td>--------------------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+		<td>--------</td>
+		<td>+</td>
+	</tr>
+	{% endfor %}
+</table>
+
+
+Bonus content:
+{% if current_user.is_authenticated %} 
+{% if user_score(current_user) >= 500 %} 
+Now go and catch some pokemon for real:
+
+telnet cyanpencil.xyz, port is the year of the release of the gameboy
+{% else %}
+Unlocked after you get 500 points (you have {{ user_score(current_user) }}) 
+{% endif %}
+{% else %}
+Unlocked after you get 500 points.
+{% endif %}
+
+<form method="post" action="/"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}" /></form>
+{% endblock %}

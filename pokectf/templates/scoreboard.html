@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block page_content %}
+{% if current_user.is_authenticated %} Hello, {{ current_user.username }}, your rank is {{ ranking }}. {% endif %}
+
+<table>
+    <tr>
+        <td>+</td>
+        <td>-----</td>
+        <td>+</td>
+        <td>-------------------------------------------------------</td>
+        <td>+</td>
+        <td>------------</td>
+        <td>+</td>
+    </tr><tr>
+        <td>|</td>
+        <td>Rank</td>
+        <td>|</td>
+        <td>Name</td>
+        <td>|</td>
+        <td>Score</td>
+        <td>|</td>
+    </tr><tr>
+        <td>+</td>
+        <td>-----</td>
+        <td>+</td>
+        <td>-------------------------------------------------------</td>
+        <td>+</td>
+        <td>------------</td>
+        <td>+</td>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>|</td>
+        <td>{{ users.index(user)+1 }}</td>
+        <td>|</td>
+        <td>{{ user.username }}</td>
+        <td>|</td>
+        <td>{{ user_score(user) }}</td>
+        <td>|</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td>+</td>
+        <td>-----</td>
+        <td>+</td>
+        <td>-------------------------------------------------------</td>
+        <td>+</td>
+        <td>------------</td>
+        <td>+</td>
+    </tr>
+</table>
+<form method="post" action="/"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}" /></form>
+{% endblock %}
+
+

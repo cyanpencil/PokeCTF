@@ -1,0 +1,56 @@
+<style>
+pre {
+    margin: 0;
+    display:inline-block; 
+		line-height: 1.1em;
+		text-shadow: 0 0 5px rgba(100,100,100,0.5);
+}
+
+.banner {
+    line-height: 1.1em;
+    text-shadow: 0 0 5px; 
+		font-size: 1.0em;
+}
+
+.solved td:nth-child(2n) {
+	background-color: #bbffbb;
+}
+
+</style>
+
+
+{% set poke_no = range(1,41)|random()|string %}
+{% set poke_style = range(0,3)|random()|string %}
+
+<center>
+<pre class="banner">
+{% include "banners/poke" + poke_no + "_" + poke_style + ".html" %}
+
+</pre>
+</center>
+<center>
+<pre>
+88d888b.          dP                MM'""""'YMM M""""""""M MM""""""""`M 
+88'  `88          88                M' .mmm. `M Mmmm  mmmM MM  mmmmmmmM 
+88.  .88 .d8888b. 88  .dP  .d8888b. M  MMMMMooM MMMM  MMMM MM      MMMM 
+88Y888P' 88'  `88 88888"   88ooood8 M  MMMMMMMM MMMM  MMMM MM  MMMMMMMM 
+88       88.  .88 88  `8b. 88.  ... M. `MMM' .M MMMM  MMMM MM  MMMMMMMM 
+dP       `88888P' dP   `YP `88888P' MM.     .dM MMMM  MMMM MM  MMMMMMMM 
+                                    MMMMMMMMMMM MMMMMMMMMM MMMMMMMMMMMM 
+                                                                        
+</pre>
+</center>
+
+<br/>
+
+
+
+<center>
+<pre>
+========================================={% if not current_user.is_authenticated %}========={% endif %}
+<a href="{{ url_for('index') }}">Home</a> - <a href="{{ url_for('challenges') }}">Challenges</a> - <a href="{{ url_for('scoreboard') }}">Scoreboard</a> - {% if current_user.is_authenticated %}<a href="{{ url_for('logout') }}">Log Out</a> {% else %}<a href="{{ url_for('register') }}">Register</a> - <a href="{{ url_for('login') }}">Log In</a>{% endif %}
+========================================={% if not current_user.is_authenticated %}========={% endif %}
+{% block content %}{% block page_content %} {% endblock %}
+{% endblock %}
+</pre>
+</center>

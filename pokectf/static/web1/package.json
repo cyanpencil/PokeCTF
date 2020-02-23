@@ -1,0 +1,12 @@
+{
+  "name": "securefileupload",
+  "version": "1.0.0",
+  "description": "Secure file upload",
+  "main": "index.js",
+  "author": "Thomas Dewaele",
+  "license": "WTFPL",
+  "dependencies": {
+    "express": "^4.16.4",
+    "formidable": "^1.2.1"
+  }
+}

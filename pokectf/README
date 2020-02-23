@@ -1,0 +1,16 @@
+
+A really simple ASCII pokemon-themed CTF framework coded during a weekend for some training
+with my teammates.
+
+Forked from: https://github.com/andreafioraldi/ascii-ctf
+
+To create the pokemon pngs in ascii art I used the `ansize` tool.To convert ansi color codes to html, I used `aha`.
+
+
+# Additional Credits
+
+Pokemon sprites from: https://www.kaggle.com/kvpratama/pokemon-images-dataset
+Blurry ascii hack from: http://www.briankhuu.com/blog/self/2015/01/14/css-style-for-ascii-art.html
+ASCII banner generator: http://www.network-science.de/ascii/
+Ansize: https://github.com/jhchen/ansize
+Aha: https://github.com/theZiz/aha

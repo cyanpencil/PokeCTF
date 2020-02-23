@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+<form method="POST">{{ form.csrf_token }}
+Team name:
+{{ form.login }}
+{{ form.password.label }}:
+{{ form.password }}
+{{ form.password_again.label }}:
+{{ form.password_again }}
+
+{{ form.submit }}
+</form>
+{% if form.errors %}{% for e in form.errors %}{% for m in form.errors[e] %}
+ >> {{ m }}
+{% endfor %}{% endfor %}{% endif %}
+{% endblock %}
