@@ -6,7 +6,7 @@ Here's a screenshot:
 ![cool ascii](https://www.github.com/cyanpencil/PokeCTF/raw/master/screen.png)
 
 
-You can try a live version [here](http://www.cyanpencil.xyz:5000)
+You can try a live version [here](http://www.pokectf.cyanpencil.xyz)
 
 No javascript required.
 
